@@ -77,12 +77,6 @@ for (let i = 0; i < 8; i++){
 
  const pizzeRand = ["margherita","caprese","prosciutto crudo e rucola","tarantina","napoli","carabiniera"];
 
- let min = 0;
-
- let max = pizzeRand.length - 1;
-
- let numRand = Math.floor(Math.random() * (max - min + 1) + min);
-
  if (pizzeVeg.length < pizze.length) {
 
     for (let i = pizzeVeg.length; i < pizze.length; i++){
