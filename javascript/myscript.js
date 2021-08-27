@@ -74,21 +74,32 @@ for (let i = 0; i < 8; i++){
  const pizze = ["viennese","capricciosa","prosciutto","tarantina","napoli","cosacca"]
 
  const pizzeVeg = ["zucchine","cavolfiori"]
- 
- for (let i = pizzeVeg.length; i < pizzeVeg.length; i + 1){
- 
-     let pizzeRandom = pizze[Math.floor(Math.random() * pizze.length)];
- 
-     pizzeVeg.push(pizzeRandom);
+
+ const pizzeRand = ["margherita","caprese","prosciutto crudo e rucola","tarantina","napoli","carabiniera"];
+
+ let min = 0;
+
+ let max = pizzeRand.length - 1;
+
+ let numRand = Math.floor(Math.random() * (max - min + 1) + min);
+
+ if (pizzeVeg.length < pizze.length) {
+
+    for (let i = pizzeVeg.length; i < pizze.length; i++){
+
+        pizzeVeg.push(pizzeRand[Math.floor(Math.random() * pizzeRand.length)]); 
+    }
+
+
+ } else if (pizzeVeg.length > pizze.length){
+
+    for (let i = pizzeVeg.length; i < pizze.length; i++){
+
+        pizze.push(pizzeRand[Math.floor(Math.random() * pizzeRand.length)]); 
+    }
+
  }
- 
 
+document.getElementById("pizze").innerHTML = pizze
 
- while (pizzeVeg.length < pizzeVeg.length){
-
-    let pizzeRandom = pizze[Math.floor(Math.random() * pizze.length)];
- 
-    pizzeVeg.push(pizzeRandom);
-}
-
-console.log(pizzeVeg)
+document.getElementById("pizzeVeg").innerHTML = pizzeVeg
